@@ -8,4 +8,4 @@ print(file)
 with TelegramClient('group', api_id, api_hash) as client:
    def callback(current, total):
       print('Uploaded', current, 'out of', total,'bytes: {:.2%}'.format(current / total))
-   client.send_file('me',file,force_document=True,progress_callback=callback)
+   client.send_file('hk_dramas_chat',file,force_document=True,progress_callback=callback)
