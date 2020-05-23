@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 link="http://www.tvboxnow.com/thread-4881427-1-1.html"
 EP=600
+while :;
 do
     curl $link | grep torrent | sed 's/.*href=\"\(at.*\)\"/\1/g' | grep EP$EP | sed 's/\".*//g'
     link2download=$(curl $link | grep torrent | grep H265 | sed 's/.*href=\"\(at.*\)\"/\1/g' | grep EP$EP | sed 's/\".*//g')
