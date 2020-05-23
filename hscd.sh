@@ -9,7 +9,7 @@ do
     download_torrent=$(curl -L "http://www.tvboxnow.com/$link2download" | grep 如果 | sed 's/.*href=\"\(at.*\)\"/\1/g' | sed 's/>.*//g')
     echo http://www.tvboxnow.com/$download_torrent
     curl -o $EP.torrent -L http://www.tvboxnow.com/$download_torrent
-    aria2c --seed-time=0 *.torrent
+    aria2c --seed-time=0 --select-file=1 *.torrent
     rm *.aria2
     cd TVBOX*
     IFS=$'\n'
